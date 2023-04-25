@@ -1,19 +1,7 @@
-/**
- * @fileoverview feature sliced relative path checker
- * @author Aleksey
- */
 'use strict';
-
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
 
 const rule = require('../../../lib/rules/path-checker'),
   RuleTester = require('eslint').RuleTester;
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({
   parserOptions: { ecmaVersion: 6, sourceType: 'module' },
