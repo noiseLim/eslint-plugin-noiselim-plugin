@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-noiselim-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "eslint plugin for fsd",
   "keywords": [
     "eslint",
