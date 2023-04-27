@@ -61,22 +61,18 @@ ruleTester.run('public-api-imports', rule, {
   invalid: [
     {
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/model/file.ts'",
-      errors: [
-        {
-          message: 'Absolute import is allowed only from Public API (index.ts)',
-        },
-      ],
+      errors: [{ messageId: 'PUBLIC_ERROR' }],
       options: aliasOptions,
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article'",
     },
     {
       filename:
         'C:\\Users\\user\\Desktop\\project\\src\\entities\\StoreDecorator.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing/file.tsx'",
-      errors: [
-        {
-          message: 'Absolute import is allowed only from Public API (index.ts)',
-        },
-      ],
+      errors: [{ messageId: 'PUBLIC_ERROR' }],
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article'",
       options: [
         {
           alias: '@',
@@ -92,11 +88,8 @@ ruleTester.run('public-api-imports', rule, {
       filename:
         'C:\\Users\\user\\Desktop\\project\\src\\entities\\forbidden.ts',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
-      errors: [
-        {
-          message: 'Test data must be imported from PubliсAPI/testing.ts',
-        },
-      ],
+      errors: [{ messageId: 'TESTING_PUBLIC_ERROR' }],
+      output: null,
       options: [
         {
           alias: '@',
